@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+.container {
+    text-align: center; 
+    padding: 20px; 
+}
+
+.body{
+    font-family: Jost;
+}
+
+button {
+    padding: 10px 20px; 
+    font-size: 16px;
+    color: #fff; 
+    background-color: #007bff; 
+    border: none;
+    border-radius: 5px; 
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+span {
+    margin: 0 10px; 
+}
