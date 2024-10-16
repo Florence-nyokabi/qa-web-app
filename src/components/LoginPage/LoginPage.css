@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+body {
+    font-family: Jost, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    height: 100vh; 
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+}
+  
+h2 {
+    text-align: center;
+    color: #333; 
+    margin: 0 0 20px 0;
+}
+  
+form {
+    background-color: #fff; 
+    padding: 20px; 
+    border-radius: 8px; 
+    box-shadow: 0 12px 18px rgba(0, 0, 0, 0.1); 
+    width: 300px; 
+}
+  
+div {
+    margin-bottom: 15px; 
+}
+  
+label {
+    display: block; 
+    margin-bottom: 5px; 
+}
+  
+input {
+    width: 95%; 
+    padding: 10px; 
+    border: 1px solid #ccc;
+    border-radius: 4px; 
+}
+  
+button {
+    display: block;
+    width: 80%; 
+    padding: 10px; 
+    font-size: 16px; 
+    color: #fff; 
+    background-color: #093a58; 
+    border: none;
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+}
+  
+button:hover {
+    background-color: #0056b3; 
+}
+  
+p {
+    text-align: center;
+    color: #666;
+}
+  
+p a {
+    color: #0e2947; 
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 600px) {
+    form {
+        width: 90%;
+        padding: 15px; 
+    }
+
+    button {
+        width: 100%; 
+    }
+
+    h2 {
+        font-size: 24px; 
+    }
+
+    input {
+        width: 100%; 
+    }
+}

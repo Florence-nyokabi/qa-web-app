@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+body {
+    font-family: Jost;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+h2 {
+    text-align: center;
+    font-family: Nunito;
+    color: #333; 
+    margin: 20px 0; 
+}
+
+.container {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    padding: 20px; 
+}
+
+.photo-grid {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+}
+
+.photo-card {
+    background-color: #fff; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    margin: 10px; 
+    padding: 10px; 
+    width: 150px; 
+    text-align: center; 
+    transition: transform 0.3s; 
+}
+
+.photo-card img {
+    width: 100%;
+    height: auto; 
+    border-radius: 4px; 
+}
+
+.photo-card p {
+    margin: 5px 0 0; 
+    font-size: 14px; 
+    color: #666; 
+}
+
+.button-container {
+    text-align: center; 
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px; 
+    color: #fff; 
+    background-color: #007bff; 
+    border: none;
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+}
+
+button:hover {
+    background-color: #0056b3; 
+}
+
+@media (max-width: 600px) {
+    .photo-card {
+        width: 90%; 
+    }
+
+    h2 {
+        font-size: 24px; 
+    }
+}
