@@ -1,10 +1,9 @@
-// src/components/LoginPage/LoginPage.jsx
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { signInWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/auth';
 import { auth } from '../../firebaseConfig';
 
-import './LoginPage.css'; // Your CSS file
+import './LoginPage.css'; 
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
@@ -15,11 +14,11 @@ const LoginPage = () => {
 
   const [error, setError] = useState('');
 
-  const [resetEmail, setResetEmail] = useState(''); // State for reset email
-  const [resetError, setResetError] = useState(''); // State for reset error
+  const [resetEmail, setResetEmail] = useState(''); //  reset email
+  const [resetError, setResetError] = useState(''); // reset error
 
-  const [isResetVisible, setIsResetVisible] = useState(false); // State to toggle reset email form
-  const [showPassword, setShowPassword] = useState(false); // State to toggle password visibility
+  const [isResetVisible, setIsResetVisible] = useState(false); //  reset email form
+  const [showPassword, setShowPassword] = useState(false); // toggle password visibility
   
   const navigate = useNavigate();
 
