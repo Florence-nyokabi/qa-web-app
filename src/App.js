@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter, Navigate, Route } from 'react-router-dom';
 import LandingPage from './components/LandingPage';
 import LoginPage from './components/LoginPage';
 import RegisterPage from './components/RegisterPage';
@@ -9,54 +9,46 @@ import AlbumsPage from './components/AlbumsPage';
 import PhotosPage from './components/PhotosPage';
 import { AuthProvider, AuthContext } from './components/AuthContext';
 
-
-const PrivateRoute = ({ children }) => {
+const PrivateRoute = ({ element: Element, ...rest }) => {
   const { currentUser } = React.useContext(AuthContext);
-  return currentUser ? children : <Navigate to="/login" />;
+  return (
+    <Route
+      {...rest}
+      element={currentUser ? <Element /> : <Navigate to="/login" replace />}
+    />
+  );
 };
+
+const router = createBrowserRouter([
+  { path: '/', element: <LandingPage /> },
+  { path: '/login', element: <LoginPage /> },
+  { path: '/register', element: <RegisterPage /> },
+  { 
+    path: '/home', 
+    element: <PrivateRoute element={HomePage} /> 
+  },
+  { 
+    path: '/users', 
+    element: <PrivateRoute element={UsersPage} /> 
+  },
+  { 
+    path: '/albums', 
+    element: <PrivateRoute element={AlbumsPage} /> 
+  },
+  { 
+    path: '/photos/:albumId', 
+    element: <PrivateRoute element={PhotosPage} /> 
+  },
+], {
+  future: {
+    v7_startTransition: true,
+  },
+});
 
 const App = () => {
   return (
     <AuthProvider>
-      <Router>
-        <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
-          <Route
-            path="/home"
-            element={
-              <PrivateRoute>
-                <HomePage />
-              </PrivateRoute>
-            }
-          />
-          <Route
-            path="/users"
-            element={
-              <PrivateRoute>
-                <UsersPage />
-              </PrivateRoute>
-            }
-          />
-          <Route
-            path="/albums"
-            element={
-              <PrivateRoute>
-                <AlbumsPage />
-              </PrivateRoute>
-            }
-          />
-          <Route
-            path="/photos/:albumId"
-            element={
-              <PrivateRoute>
-                <PhotosPage />
-              </PrivateRoute>
-            }
-          />
-        </Routes>
-      </Router>
+      <RouterProvider router={router} />
     </AuthProvider>
   );
 };
